@@ -1,12 +1,9 @@
 package com.flight.demo.entity;
 
-import org.springframework.data.annotation.Id;
-
 import java.time.LocalDateTime;
 
 public class Flight {
 
-    @Id
     private Long flightId;
 
     private int flightNumber;

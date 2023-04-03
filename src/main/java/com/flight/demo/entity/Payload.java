@@ -1,22 +1,22 @@
 package com.flight.demo.entity;
 
-import org.springframework.data.annotation.Id;
+public class Payload {
 
-public class Baggage {
-
-    @Id
     private Long id;
 
-    private int weight;
+    private Integer weight;
 
     private WeightUnit weightUnit;
 
-    private int pieces;
+    private Integer pieces;
 
-    public Baggage(int weight, WeightUnit weightUnit, int pieces) {
+    private PayloadType payloadType;
+
+    public Payload(int weight, WeightUnit weightUnit, int pieces, PayloadType payloadType) {
         this.weight = weight;
         this.weightUnit = weightUnit;
         this.pieces = pieces;
+        this.payloadType = payloadType;
     }
 
     public Long getId() {
@@ -43,11 +43,23 @@ public class Baggage {
         this.weightUnit = weightUnit;
     }
 
-    public int getPieces() {
+    public void setWeight(Integer weight) {
+        this.weight = weight;
+    }
+
+    public void setPieces(Integer pieces) {
+        this.pieces = pieces;
+    }
+
+    public Integer getPieces() {
         return pieces;
     }
 
-    public void setPieces(int pieces) {
-        this.pieces = pieces;
+    public PayloadType getPayloadType() {
+        return payloadType;
+    }
+
+    public void setPayloadType(PayloadType payloadType) {
+        this.payloadType = payloadType;
     }
 }

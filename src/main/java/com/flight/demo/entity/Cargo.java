@@ -1,55 +1,42 @@
 package com.flight.demo.entity;
 
-import org.springframework.data.annotation.Id;
-
 import java.util.List;
 
 public class Cargo {
 
-    @Id
-    private Long id;
+    private Long flightId;
 
-    private int weight;
+    private List<Payload> baggage;
 
-    private WeightUnit weightUnit;
+    private List<Payload> cargo;
 
-    private int pieces;
-
-    public Cargo(int weight, WeightUnit weightUnit, int pieces) {
-        this.weight = weight;
-        this.weightUnit = weightUnit;
-        this.pieces = pieces;
+    public Cargo(Long flightId, List<Payload> baggage, List<Payload> cargo) {
+        this.flightId = flightId;
+        this.baggage = baggage;
+        this.cargo = cargo;
     }
 
-    public Long getId() {
-        return id;
+    public Long getFlightId() {
+        return flightId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setFlightId(Long flightId) {
+        this.flightId = flightId;
     }
 
-    public int getWeight() {
-        return weight;
+    public List<Payload> getBaggage() {
+        return baggage;
     }
 
-    public void setWeight(int weight) {
-        this.weight = weight;
+    public void setBaggage(List<Payload> baggage) {
+        this.baggage = baggage;
     }
 
-    public WeightUnit getWeightUnit() {
-        return weightUnit;
+    public List<Payload> getCargo() {
+        return cargo;
     }
 
-    public void setWeightUnit(WeightUnit weightUnit) {
-        this.weightUnit = weightUnit;
-    }
-
-    public int getPieces() {
-        return pieces;
-    }
-
-    public void setPieces(int pieces) {
-        this.pieces = pieces;
+    public void setCargo(List<Payload> cargo) {
+        this.cargo = cargo;
     }
 }
